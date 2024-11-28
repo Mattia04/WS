@@ -1,0 +1,905 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/Mattia04/WS/">
+      
+      
+      
+        <link rel="next" href="001_What%27s_scientific_programming/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>Python for physics</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CFira+code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Fira code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-approach-this-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Python for physics" class="md-header__button md-logo" aria-label="Python for physics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.9 8.9-1.7 1-4-6.9 1.7-1zm-12.1-1 3 5.2 6.1-3.5-3-5.2zm1.6 4.8-2-3.5-4.3 2.5 2 3.5zm-9.3 1.9 1 1.7 2.6-1.5-1-1.7zm10-.6-.3-.4-4.3 2.5.3.4c.2.3.5.6.8.8L7 22h2l1.4-4.3h.1L12 22h2l-1.9-5.6c.5-.7.5-1.6 0-2.4"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python for physics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to Approach This Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-purple"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Python for physics" class="md-nav__button md-logo" aria-label="Python for physics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.9 8.9-1.7 1-4-6.9 1.7-1zm-12.1-1 3 5.2 6.1-3.5-3-5.2zm1.6 4.8-2-3.5-4.3 2.5 2 3.5zm-9.3 1.9 1 1.7 2.6-1.5-1-1.7zm10-.6-.3-.4-4.3 2.5.3.4c.2.3.5.6.8.8L7 22h2l1.4-4.3h.1L12 22h2l-1.9-5.6c.5-.7.5-1.6 0-2.4"/></svg>
+
+    </a>
+    Python for physics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How to Approach This Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    How to Approach This Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#balancing-theory-with-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancing Theory with Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-progression-through-the-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Progression Through the Guide
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="001_What%27s_scientific_programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Programming in Scientific Contexts?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="002_Computational_Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational Thinking and Problem-Solving
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="003_Overview_of_programming_languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview of Programming Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="004_Careers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Career Paths in Scientific Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#balancing-theory-with-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancing Theory with Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-progression-through-the-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Progression Through the Guide
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="how-to-approach-this-guide">How to Approach This Guide</h1>
+<h2 id="balancing-theory-with-practice">Balancing Theory with Practice</h2>
+<p>This guide is taught to give you the concepts and tools to solve real 
+science problems through the guide. In this way you can learn the concepts 
+and get experience at the same time.</p>
+<h2 id="suggested-progression-through-the-guide">Suggested Progression Through the Guide</h2>
+<p>My suggestion is to learn following the table of contents, but if you have 
+some experience you can start where you want, or you can read only the 
+theoretical part of the guide.  </p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<h2 id="introduction-to-programming-for-science">Introduction to Programming for Science</h2>
+<ul>
+<li>What is Programming in Scientific Contexts?<ul>
+<li>Historical Perspective of Scientific Computing</li>
+<li>Key Differences Between General and Scientific Programming</li>
+</ul>
+</li>
+<li>Computational Thinking and Problem-Solving<ul>
+<li>Breaking Down Problems</li>
+<li>Designing Logical Solutions</li>
+</ul>
+</li>
+<li>Overview of Programming Languages for Science<ul>
+<li>Python, our main focus</li>
+<li>Other important programming languages (we will integrate them later)<ul>
+<li>MATLAB: </li>
+<li>Julia:</li>
+<li>C/C++:</li>
+<li>Mathematica:</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Career Paths in Scientific Programming<ul>
+<li>Roles and Skills in Academia, Industry, and Government</li>
+<li>Building a Portfolio for Scientific Software Development</li>
+</ul>
+</li>
+</ul>
+<h2 id="setting-up-your-first-programming-environment">Setting Up Your First Programming Environment</h2>
+<ul>
+<li>Choosing the Right Tools for Scientific Programming<ul>
+<li>Criteria for Selecting Languages and Libraries</li>
+<li>Overview of Integrated Development Environments (IDEs)</li>
+</ul>
+</li>
+<li>Editors and IDEs: Recommendations and Configurations</li>
+<li>Running Your First Program<ul>
+<li>Command Line Basics</li>
+<li>Writing and Running Scripts</li>
+</ul>
+</li>
+</ul>
+<h2 id="foundational-programming-concepts">Foundational Programming Concepts</h2>
+<ul>
+<li>Variables and Data Types<ul>
+<li>Primitive Types and Memory Management</li>
+<li>Type Conversion and Casting</li>
+</ul>
+</li>
+<li>Basic Operations<ul>
+<li>Arithmetic Operations</li>
+<li>Logical and Bitwise Operations</li>
+</ul>
+</li>
+<li>Input and Output <ul>
+<li>Reading from Standard Input</li>
+<li>Writing to Console and Files</li>
+<li>Formatting Output for Scientific Notation </li>
+</ul>
+</li>
+<li>Control Flow<ul>
+<li>Conditional Statements</li>
+<li>Looping Structures</li>
+<li>Using Break, Continue, and Pass</li>
+</ul>
+</li>
+<li>Modular Programming<ul>
+<li>Writing Function</li>
+<li>Scope and Lifetime of Variables</li>
+</ul>
+</li>
+<li>Tools for Scientific Programming<ul>
+<li>Managing Dependencies and Libraries</li>
+<li>Introduction to Build Systems</li>
+<li>Cloud-Based Tools and Platforms </li>
+</ul>
+</li>
+<li>Installing Essential Tools<ul>
+<li>Installing Version Control Systems (e.g., Git)</li>
+<li>Setting Up a Virtual Environment (Python, Conda, etc.)</li>
+</ul>
+</li>
+<li>Debugging and Error Handling<ul>
+<li>Understanding Syntax vs. Logical Errors</li>
+<li>Tools for Debugging (e.g., Debuggers, Print Statements)</li>
+<li>Writing Robust Code with Exception Handling</li>
+</ul>
+</li>
+<li>Introduction to Algorithms<ul>
+<li>Basic Sorting and Searching Algorithms</li>
+<li>Algorithmic Thinking for Scientific Applications</li>
+<li>Trade-Offs in Time and Space Complexity</li>
+</ul>
+</li>
+</ul>
+<h2 id="working-with-data-and-data-structures">Working with Data and Data Structures</h2>
+<ul>
+<li>Fundamental Data Structures<ul>
+<li>Lists and Arrays</li>
+<li>Dictionaries and Hash Maps for Key-Value Storage</li>
+<li>Sets and Tuples</li>
+<li>Nested Data Structures</li>
+</ul>
+</li>
+<li>Advanced Data Structures<ul>
+<li>Linked Lists, Stacks, and Queues</li>
+<li>Trees and Graphs</li>
+<li>Implementing Custom Data Structures</li>
+</ul>
+</li>
+<li>Manipulating Arrays and Matrices<ul>
+<li>Matrix Algebra and Scientific Applications</li>
+<li>Operations on Sparse and Dense Matrices</li>
+<li>Broadcasting and Vectorized Operations</li>
+</ul>
+</li>
+<li>File Handling<ul>
+<li>Reading and Writing Text Files</li>
+<li>Binary File Operations and Data Serialization</li>
+</ul>
+</li>
+<li>Parsing and Managing Scientific Data<ul>
+<li>CSV, JSON, and XML Formats</li>
+<li>python libs: pandas and Dask</li>
+</ul>
+</li>
+</ul>
+<h2 id="scientific-visualization">Scientific Visualization</h2>
+<ul>
+<li>Principles of Effective Scientific Communication<ul>
+<li>Choosing the Right Visual Representation</li>
+<li>Avoiding Misleading Graphs and Bias</li>
+</ul>
+</li>
+<li>Basic Plotting Techniques<ul>
+<li>Line Plots, Scatter Plots, and Histograms</li>
+<li>Customizing Axes, Legends, and Labels</li>
+</ul>
+</li>
+<li>Common visualization tools<ul>
+<li>Matplotlib</li>
+<li>plotly</li>
+<li>seaborn</li>
+<li>ROOT</li>
+<li>ggPlot</li>
+</ul>
+</li>
+</ul>
+<h2 id="intermediate-programming-topics">Intermediate Programming Topics</h2>
+<ul>
+<li>Functional Programming Concepts<ul>
+<li>Lambda Functions for Concise Operations</li>
+<li>Higher-Order Functions (Map, Reduce, Filter)</li>
+<li>Recursion: Concepts, Examples, and Limitations</li>
+</ul>
+</li>
+<li>Object-Oriented Programming (OOP)<ul>
+<li>Understanding Classes and Objects</li>
+<li>Constructors, Methods, and Attributes</li>
+<li>Inheritance and Polymorphism</li>
+<li>Encapsulation and Abstraction</li>
+</ul>
+</li>
+<li>Regular Expressions<ul>
+<li>Pattern Matching Basics</li>
+<li>Applications in Parsing and Text Manipulation</li>
+</ul>
+</li>
+<li>Intermediate File Handling<ul>
+<li>Working with Compressed Files (e.g., ZIP, GZIP)</li>
+<li>Reading and Writing Streams for Real-Time Data</li>
+<li>Specialized Scientific Formats: HDF5, NetCDF, and FITS</li>
+<li>Managing Large Data Files Efficiently</li>
+</ul>
+</li>
+<li>Scientific Libraries and Frameworks<ul>
+<li>Organizing Code into Modules and Packages</li>
+<li>Documentation for Modular Code</li>
+<li>Overview of Popular Libraries for Data Analysis and Visualization</li>
+<li>Integrating Scientific Libraries into Workflows</li>
+</ul>
+</li>
+<li>Introduction to Scripting for Automation<ul>
+<li>Automating File and Data Processing</li>
+<li>Scheduling and Managing Automated Tasks</li>
+</ul>
+</li>
+</ul>
+<h2 id="numerical-methods-and-linear-algebra">Numerical Methods and Linear Algebra</h2>
+<ul>
+<li>Libraries to help you<ul>
+<li>Numpy</li>
+<li>SciPy</li>
+</ul>
+</li>
+<li>Fundamentals of Numerical Computing<ul>
+<li>Understanding Floating-Point Representation</li>
+<li>Sources of Errors: Round-Off and Truncation</li>
+</ul>
+</li>
+<li>Solving Linear Systems<ul>
+<li>Direct Methods: Gaussian Elimination and LU Decomposition</li>
+<li>Iterative Methods: Jacobi and Gauss-Seidel</li>
+</ul>
+</li>
+<li>Root-Finding Techniques<ul>
+<li>Graphical Methods for Root Estimation</li>
+<li>Numerical Techniques: Bisection, Newton-Raphson, Secant</li>
+</ul>
+</li>
+<li>Numerical Differentiation and Integration<ul>
+<li>Finite Difference Approximation</li>
+<li>Trapezoidal and Simpson’s Rule</li>
+<li>Adaptive Quadrature</li>
+</ul>
+</li>
+<li>Eigenvalues and Eigenvectors<ul>
+<li>Computation and Applications</li>
+<li>Power Method and QR Algorithm</li>
+</ul>
+</li>
+<li>Introduction to Sparse Matrices<ul>
+<li>Storage Formats: COO, CSR, and CSC</li>
+<li>Solving Large Sparse Systems</li>
+<li>Applications in Graph Theory and Network Analysis</li>
+</ul>
+</li>
+</ul>
+<h2 id="computational-efficiency-and-optimization">Computational Efficiency and Optimization</h2>
+<ul>
+<li>Profiling and Optimizing Code<ul>
+<li>Identifying Bottlenecks</li>
+<li>Using Profilers to Improve Performance</li>
+</ul>
+</li>
+<li>Writing Efficient Algorithms<ul>
+<li>Big-O Notation and Complexity Analysis</li>
+<li>Strategies for Improving Efficiency</li>
+</ul>
+</li>
+<li>Memory Management<ul>
+<li>Stack and Heap Allocation</li>
+<li>Optimizing Memory Usage</li>
+</ul>
+</li>
+<li>Parallel Computing<ul>
+<li>Introduction to Threads and Processes</li>
+<li>Using OpenMP and MPI for Distributed Computing</li>
+<li>GPU Computing Basics: CUDA and OpenCL</li>
+</ul>
+</li>
+<li>Vectorization and Broadcasting<ul>
+<li>Techniques for Array-Based Programming</li>
+<li>Performance Benefits in Numerical Computation</li>
+</ul>
+</li>
+<li>Optimization Techniques<ul>
+<li>Local and Global Optimization</li>
+<li>Applications of Optimization in Science and Engineering</li>
+</ul>
+</li>
+</ul>
+<h2 id="advanced-visualization">Advanced Visualization</h2>
+<ul>
+<li>Advanced plots<ul>
+<li>Multiple plots</li>
+<li>3D Plotting: Surfaces, Wireframes, and Volumes</li>
+<li>Interactive Visualizations with Tools like Plotly or Bokeh</li>
+</ul>
+</li>
+<li>Visualizing Large Datasets<ul>
+<li>Strategies for Down-sampling and Aggregation</li>
+<li>Specialized Tools for Big Data Visualization</li>
+</ul>
+</li>
+<li>Creating Publication-Ready Graphics<ul>
+<li>Exporting High-Resolution Images</li>
+<li>Styling Guidelines for Journals and Conferences</li>
+</ul>
+</li>
+</ul>
+<h2 id="advanced-topics-in-scientific-computing">Advanced Topics in Scientific Computing</h2>
+<ul>
+<li>Symbolic Computing<ul>
+<li>Simplifying Expressions and Solving Equations</li>
+<li>Applications in Differential Equations and Integration</li>
+</ul>
+</li>
+<li>Solving Differential Equations<ul>
+<li>Ordinary Differential Equations (ODEs): Euler and Runge-Kutta Methods</li>
+<li>Partial Differential Equations (PDEs): Finite Difference and Finite Element Methods</li>
+<li>Boundary Value Problems</li>
+</ul>
+</li>
+<li>Advanced Numerical Methods<ul>
+<li>Spectral Methods for Signal and Function Analysis</li>
+<li>Multigrid Methods for Faster Convergence</li>
+</ul>
+</li>
+<li>High-Performance Computing (HPC)<ul>
+<li>Supercomputing Architectures</li>
+<li>Writing Scalable Parallel Programs</li>
+<li>Case Studies in HPC for Science </li>
+</ul>
+</li>
+</ul>
+<h2 id="machine-learning">Machine Learning</h2>
+<ul>
+<li>Machine Learning for Scientific Applications<ul>
+<li>Basics of Supervised and Unsupervised Learning</li>
+<li>Neural Networks for Scientific Data</li>
+<li>Physics-Informed Machine Learning Models</li>
+</ul>
+</li>
+<li>Libraries<ul>
+<li>scikit-learn</li>
+<li>TensorFlow</li>
+<li>PyTorch</li>
+</ul>
+</li>
+</ul>
+<h2 id="collaboration-and-reproducibility">Collaboration and Reproducibility</h2>
+<ul>
+<li>Writing Reproducible Code<ul>
+<li>Best Practices for Version Control</li>
+<li>Documenting Code for Collaboration</li>
+</ul>
+</li>
+<li>Reproducible Research<ul>
+<li>Combining Code, Data, and Results</li>
+<li>Tools for Reproducible Workflows (e.g., Jupyter, RMarkdown)</li>
+</ul>
+</li>
+<li>Teamwork in Scientific Programming<ul>
+<li>Managing Contributions with Git and GitHub</li>
+<li>Resolving Conflicts in Collaborative Projects</li>
+</ul>
+</li>
+</ul>
+<h2 id="emerging-technologies-in-scientific-computing">Emerging Technologies in Scientific Computing</h2>
+<ul>
+<li>Keeping Up with Trends<ul>
+<li>Joining Scientific Programming Communities</li>
+<li>Staying Updated with Research and Tools</li>
+</ul>
+</li>
+<li>Basics of Quantum Computing</li>
+<li>Cloud-Based Scientific Workflows</li>
+<li>Integrating Blockchain for Data Integrity</li>
+</ul>
+<h2 id="additional-considerations">Additional Considerations</h2>
+<ul>
+<li>Ethics in Scientific Programming<ul>
+<li>Ensuring Data Privacy and Security</li>
+<li>Addressing Bias in Algorithms</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="001_What%27s_scientific_programming/" class="md-footer__link md-footer__link--next" aria-label="Next: What is Programming in Scientific Contexts?">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                What is Programming in Scientific Contexts?
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Mattia Ballico
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Mattia04" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
